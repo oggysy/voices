@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="voice.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <h1>今、話せません</h1>
+    <div class="radio">
+      <div class="item-frame">
+        <label class="text" for='setting-item-1'>ハードモードにする</label>
+        <input type='checkbox' name="hard" id='setting-item-1' class="checkbox" value="1" />
+        <label class="switch" for='setting-item-1'></label>
+
+      </div>
+    </div>
+    <div class="mainbutton">
+      <div class="threebutton">
+        <div class="tired">
+          <button onclick="tiredTime()" type="image "><img src="image/喜怒哀楽　悲しい.png" alt=""><br>疲れてる</button>
+        </div>
+        <div class="meal">
+          <button onclick="mealTime()" type="button"><img src="image/ナイフ、お皿、フォークのお食事アイコン.png" alt=""><br>食事中</button>
+        </div>
+        <div class="dentifrice">
+          <button onclick="dentifriceTime()" type="button"><img src="image/歯ブラシのアイコン素材.png" alt=""><br>ハミガキ</button>
+        </div>
+      </div>
+
+      <div class="freetext">
+        <input class="voice" type="text" id="text" name="text" value="" placeholder="読み上げたいテキストを入力してください" />
+        <button onclick="readAloud()" class="readbutton">読み上げる</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function readAloud() {
+      // テキストを取得
+      const text = document.getElementById("text").value
+
+      // ブラウザにWeb Speech API Speech Synthesis機能があるか判定
+      if ('speechSynthesis' in window) {
+        // 発言を設定
+        const uttr = new SpeechSynthesisUtterance()
+        let element = document.getElementById('setting-item-1')
+        if (element.checked) {
+          uttr.pitch = 0
+          uttr.rate = 0.6
+        } else { }
+        uttr.text = text
+        // 発言を再生
+        window.speechSynthesis.speak(uttr)
+
+      } else {
+        alert('大変申し訳ありません。このブラウザは音声合成に対応していません。')
+      }
+    }
+
+    function tiredTime(hard) {
+      const uttr = new SpeechSynthesisUtterance()
+      let element = document.getElementById('setting-item-1')
+      if (element.checked) {
+        uttr.pitch = 0
+        uttr.rate = 0.6
+        uttr.text = "あなたと話したくありません"
+        window.speechSynthesis.speak(uttr)
+      } else {
+        uttr.text = "今、とても疲れているので話せません"
+        window.speechSynthesis.speak(uttr)
+      }
+
+    }
+
+    function mealTime(hard) {
+      const uttr = new SpeechSynthesisUtterance()
+      let element = document.getElementById('setting-item-1')
+      if (element.checked) {
+
+        uttr.pitch = 0
+        uttr.rate = 0.7
+        uttr.text = "食事中なので、黙っててもらえますか?"
+        window.speechSynthesis.speak(uttr)
+
+
+      } else {
+        uttr.text = "今、ご飯を食べているので喋れません"
+        window.speechSynthesis.speak(uttr)
+      }
+    }
+
+    function dentifriceTime(hard) {
+      const uttr = new SpeechSynthesisUtterance()
+      let element = document.getElementById('setting-item-1')
+      if (element.checked) {
+        uttr.pitch = 0
+        uttr.rate = 0.7
+        uttr.text = "歯を磨いているのが分かりませんか？"
+        window.speechSynthesis.speak(uttr)
+      } else {
+        uttr.text = "今、歯を磨いているので喋れません"
+        window.speechSynthesis.speak(uttr)
+      }
+    }
+
+
+  </script>
+
+</body>
+
+</html>
