@@ -1,6 +1,9 @@
+body{
+  background-color: snow;
+}
+
 main{
   height: 667px;
-  background-color: snow;
   margin: 20px;
 }
 
