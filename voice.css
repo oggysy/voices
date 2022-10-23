@@ -1,0 +1,121 @@
+main{
+  height: 667px;
+  background-color: snow;
+  margin: 20px;
+}
+
+main h1{
+  margin: 15px;
+}
+
+.mainbutton{
+    text-align: center;
+}
+
+
+.threebutton{
+    display: flex;
+
+}
+
+.tired{
+  flex: 1;
+}
+
+.meal{
+  flex: 1;
+
+}
+
+.dentifrice{
+  flex: 1;
+}
+
+button{
+  width: 80%;
+  height: 100px;
+  background-color:white;
+  border-radius: 10%;
+  border-width: 0px;
+  box-shadow: 0 5px 5px 0 rgba(3, 1, 1, .5);
+}
+
+img{
+  width: 50px;
+  height: 50px;
+}
+
+.radio{
+  text-align: right;
+}
+
+.radio .item-frame {
+  margin: 1rem auto;
+}
+.radio .text {
+  vertical-align: middle;
+}
+.radio label {
+  cursor: pointer;
+}
+
+.radio .switch {
+  position: relative;
+}
+.radio .switch:before, .radio .switch:after {
+  content: '';
+  vertical-align: middle;
+  display: inline-block;
+}
+.radio .switch:before {
+  width: 2em;
+  height: 1em;
+  border: 2px solid#C4C9FF;
+  border-radius: 32px;
+  background:#999;
+}
+
+.radio .switch:after {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  background:#C4C9FF;
+  border-radius: 50%;
+  left: -2.2em;
+}
+
+.radio input {
+  display: none;
+}
+
+
+.radio input:checked ~ .switch:before {
+  background:#00b715;
+  border-color:#84ff92;
+}
+
+.radio input:checked ~ .switch:after {
+  background:#84ff92;
+  left: -1.1em;
+}
+
+.freetext button{
+  height: 30px;
+  width: 95%;
+  border-radius: 0%;
+}
+
+.freetext{
+  margin-top: 20px;
+  padding-top: 10px;
+}
+.voice{
+  width: 90%;
+  height: 30px;
+}
+
+.readbutton{
+  margin-top: 10px;
+  background-color: steelblue;
+  color: white;
+}
